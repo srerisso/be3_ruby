@@ -1,0 +1,24 @@
+<div class="center">
+  <h3>Listado de clientes</h3>
+
+  <table class="table table-bordered">
+      <tr>
+        <td>Nombre</td>
+        <td>Email</td>
+        <td colspan="3">Acciones</td>
+      </tr>
+
+      <% @clientes.each do |cliente| %>
+        <tr>
+          <td><%= cliente.nombre %></td>
+          <td><%= cliente.email %></td>
+          <td><%= link_to 'Show', cliente %></td>
+          <td><%= link_to 'Edit', edit_cliente_path(cliente) %></td>
+          <td><%= link_to 'Destroy', cliente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+  </table>
+
+</div>
+
+<%= link_to 'New Cliente', new_cliente_path, class:"btn btn-link" %>

@@ -1,0 +1,29 @@
+<div class="center">
+	<h3>Listado de Presupuestos</h3>
+	<table class="table table-bordered">
+		<tr>
+          <td>C&oacute;digo</td>
+          <td>Referencia</td>
+          <td>Cliente</td>
+          <td>Fecha IN</td>
+          <td>Acciones</td>
+		</tr>
+	<% @presupuestos.each do |presupuesto| %>
+		<tr>
+			<td><%= presupuesto.codigoalg %></td>
+            <td><%= presupuesto.referencia %></td>
+			<td></td>
+		  	<td><%= presupuesto.created_at.to_formatted_s(:short) %></td>
+		  	<td class="col-md-3">
+				<%= link_to 'Show', presupuesto, class:"btn btn-link" %>
+	        	<%= link_to 'Edit', edit_presupuesto_path(presupuesto), class:"btn btn-link" %>
+	        	<%= link_to 'Destroy', presupuesto, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-link" %>
+			</td>
+		</tr>
+	<% end %>
+	</table>
+</div>
+
+<br>
+
+<%= link_to 'New Presupuesto', new_presupuesto_path, class:"btn btn-link" %> <br>

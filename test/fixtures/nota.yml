@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  presupuesto_id_id: 
+  texto: MyString
+
+two:
+  presupuesto_id_id: 
+  texto: MyString

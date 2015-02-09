@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Codigoalg:</strong>
+  <%= @presupuesto.codigoalg %>
+</p>
+<p>
+	<strong>Referencia</strong>
+	<%= @presupuesto.referencia %>
+</p>
+<p>
+	<strong>Fecha IN:</strong>
+	<%= @presupuesto.created_at.to_formatted_s(:short) %>
+</p>
+
+<p>
+	<strong>Cliente:</strong>
+</p>
+<p>
+  <strong>Acabado:</strong>
+  <%= @presupuesto.acabado %>
+</p>
+
+<p>
+  <strong>Series:</strong>
+  <%= @presupuesto.series %>
+</p>
+
+<%= link_to 'Edit', edit_presupuesto_path(@presupuesto) %> |
+<%= link_to 'Back', presupuestos_path %>

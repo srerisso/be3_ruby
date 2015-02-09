@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  codigoalg: MyString
+  series: MyString
+  acabado: MyString
+
+two:
+  codigoalg: MyString
+  series: MyString
+  acabado: MyString

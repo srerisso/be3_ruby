@@ -1,0 +1,38 @@
+<%= form_for(@presupuesto) do |f| %>
+  <% if @presupuesto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@presupuesto.errors.count, "error") %> prohibited this presupuesto from being saved:</h2>
+
+      <ul>
+      <% @presupuesto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row">
+  <div class="col-sm-8">
+    <div class="form-group">
+      <%= f.label :codigoalg %><br>
+      <%= f.text_field :codigoalg, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :referencia %><br>
+      <%= f.text_field :referencia, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :series %><br>
+      <%= f.text_field :series, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :acabado %><br>
+      <%= f.text_field :acabado, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit class:"btn btn-primary" %>
+    </div>
+  </div>
+</div>
+
+<% end %>
