@@ -33,16 +33,18 @@
       <%= f.submit class:"btn btn-primary" %>
     </div>
   </div>
-    
   <div class="col-sm-6">
-    <% #TODO listar los todo's del presupuesto si hay
-    %>      
-      <h3>Lista de Todo's</h3>
-      <div class="form-group">
-          <%= f.label :id %><br>
-          <%= f.text_field :id, class:"form-control" %>
-      </div>
+      <h3>Todo's del presupuesto</h3>
+    <!-- Todo's para el presupuesto -->
+    <%= f.fields_for :todos do |builder| %>
+    <div class="form-group">
+        <% print(:created_at) %>
+        <%= builder.text_field :texto, class:"form-control" %>
+    </div>
+    <% end %>
   </div>
 </div>
+
+<%= link_to "Add Todo", presupuesto_todos_path(@presupuesto), class:"btn btn-link" %>
 
 <% end %>
