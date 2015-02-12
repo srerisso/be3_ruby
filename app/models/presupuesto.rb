@@ -1,3 +1,3 @@
 class Presupuesto < ActiveRecord::Base
-	has_many :notas
+	has_many :todos, dependent: :destroy
 end

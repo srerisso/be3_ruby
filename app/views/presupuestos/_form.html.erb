@@ -12,7 +12,7 @@
   <% end %>
 
 <div class="row">
-  <div class="col-sm-8">
+  <div class="col-sm-6">
     <div class="form-group">
       <%= f.label :codigoalg %><br>
       <%= f.text_field :codigoalg, class:"form-control" %>
@@ -32,6 +32,16 @@
     <div class="form-group">
       <%= f.submit class:"btn btn-primary" %>
     </div>
+  </div>
+    
+  <div class="col-sm-6">
+    <% #TODO listar los todo's del presupuesto si hay
+    %>      
+      <h3>Lista de Todo's</h3>
+      <div class="form-group">
+          <%= f.label :id %><br>
+          <%= f.text_field :id, class:"form-control" %>
+      </div>
   </div>
 </div>
 

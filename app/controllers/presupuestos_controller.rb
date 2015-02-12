@@ -1,6 +1,12 @@
 class PresupuestosController < ApplicationController
   before_action :set_presupuesto, only: [:show, :edit, :update, :destroy]
 
+  # added 12/02/2015 a partir de http://stackoverflow.com/questions/18219008/rails-4-nested-resources
+  def set_presupuesto 
+    @presupuesto = Presupuesto.find(params[:id])
+    @todos = @presupuesto.todos
+  end
+    
   # GET /presupuestos
   # GET /presupuestos.json
   def index

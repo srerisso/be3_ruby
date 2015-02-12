@@ -1,0 +1,24 @@
+<div class="center">
+    <h3>Listing todos</h3>
+
+    <table class="table table-bordered">
+        <tr>
+          <td>Texto</td>
+          <td>Acciones</td>
+        </tr>
+
+        <% @todos.each do |todo| %>
+          <tr>
+            <td><%= todo.texto %></td>
+            <td class="cold-md-3">
+                <%= link_to 'Show', presupuesto_todo_path(todo), class:"btn btn-link" %>
+                <%= link_to 'Edit', edit_presupuesto_todo_path(todo), class:"btn btn-link" %>
+                <%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-link" %>
+          </tr>
+        <% end %>
+    </table>
+
+    <br>
+
+    <%= link_to 'New Todo', new_todo_path, class:"btn btn-link" %>
+</div>
