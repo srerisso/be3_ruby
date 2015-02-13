@@ -3,32 +3,45 @@
 <div class="row">
     <div class="col-sm-6">
         <table class="table table-bordered">
-            <p>
-              <strong>Codigoalg:</strong>
-              <%= @presupuesto.codigoalg %>
-            </p>
-            <p>
-                <strong>Fecha IN:</strong>
-                <%= @presupuesto.created_at.to_formatted_s(:short) %>
-            </p>
-            <p>
-                <strong>Cliente:</strong>
-            </p>
+            <tr>
+                <td><strong>Codigo ALG</strong></td>
+                <td><%= @presupuesto.codigoalg %></td>
+            </tr>
+            <tr>
+                <td><strong>Fecha IN</strong></td>
+                <td><%= @presupuesto.created_at.to_formatted_s(:short) %></td>
+            </tr>
+            <tr>
+                <td><strong>Cliente</strong></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Estado</strong></td>
+                <td><%= @presupuesto.estado %></td>
+            </tr>
+        </table>
+        
+        <table class="table table-bordered">
+            <tr>
+                <td><strong>Referencia</strong></td>
+                <td>  <%= @presupuesto.referencia %></td>
+            </tr>
+            <tr>
+                <td><strong>Series:</strong></td>
+                <td><%= @presupuesto.series %></td>
+            </tr>
+            <tr>
+                <td><strong>Acabado:</strong></td>
+                <td><%= @presupuesto.acabado %></td>
+            </tr>
         
         </table>
-        <p>
-            <strong>Referencia</strong>
-            <%= @presupuesto.referencia %>
-        </p>
-        <p>
-          <strong>Series:</strong>
-          <%= @presupuesto.series %>
-        </p>
-        <p>
-          <strong>Acabado:</strong>
-          <%= @presupuesto.acabado %>
-        </p>
+        
+        <span><strong>Etiquetas</strong>: 
+            <%= @presupuesto.etiquetas %>
+        </span>
 
+        <h3>Todo's</h3>
         <table class="table table-hover">
             <tr>
                 <td>Fecha</td>
