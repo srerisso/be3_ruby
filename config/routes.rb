@@ -8,10 +8,9 @@ Rails.application.routes.draw do
   # GET     /presupuestos/:id/edit  -> Edit page -- a separate page to edit a presupuesto
   # PUT     /presupuestos/:id       -> UPDATE -- update a single presupuesto
   # GET     /presupuestos/:id       -> DELTE -- delete a presupuesto from the database
-    
   resources :presupuestos do
-      resources :todos, :except => [:update, :destroy, :show, :new, :edit]
-      resources :todos, :only => [:post]
+      resources :todos, :except => [:index, :update, :destroy, :show, :edit]
+      resources :todos, :only => [:create]
   end
 
   resources :todos, :only => [:update, :destroy]

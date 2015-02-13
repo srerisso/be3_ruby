@@ -1,30 +1,50 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Codigoalg:</strong>
-  <%= @presupuesto.codigoalg %>
-</p>
-<p>
-	<strong>Referencia</strong>
-	<%= @presupuesto.referencia %>
-</p>
-<p>
-	<strong>Fecha IN:</strong>
-	<%= @presupuesto.created_at.to_formatted_s(:short) %>
-</p>
+<div class="row">
+    <div class="col-sm-6">
+        <table class="table table-bordered">
+            <p>
+              <strong>Codigoalg:</strong>
+              <%= @presupuesto.codigoalg %>
+            </p>
+            <p>
+                <strong>Fecha IN:</strong>
+                <%= @presupuesto.created_at.to_formatted_s(:short) %>
+            </p>
+            <p>
+                <strong>Cliente:</strong>
+            </p>
+        
+        </table>
+        <p>
+            <strong>Referencia</strong>
+            <%= @presupuesto.referencia %>
+        </p>
+        <p>
+          <strong>Series:</strong>
+          <%= @presupuesto.series %>
+        </p>
+        <p>
+          <strong>Acabado:</strong>
+          <%= @presupuesto.acabado %>
+        </p>
 
-<p>
-	<strong>Cliente:</strong>
-</p>
-<p>
-  <strong>Acabado:</strong>
-  <%= @presupuesto.acabado %>
-</p>
+        <table class="table table-hover">
+            <tr>
+                <td>Fecha</td>
+                <td>Texto</td>
+            </tr>
+                <% @todos.each do |todo| %>
+                    <tr>
+                        <td><%= todo.created_at.nil? ? "..." : todo.created_at.to_formatted_s(:short) %></td>
+                        <td><%= todo.texto %></td>
+                    </tr>
+                <% end %>
 
-<p>
-  <strong>Series:</strong>
-  <%= @presupuesto.series %>
-</p>
+        </table>
+    </div>
 
-<%= link_to 'Edit', edit_presupuesto_path(@presupuesto) %> |
+</div>
+
+<%= link_to 'Edit', edit_presupuesto_path(@presupuesto), class:"btn btn-link" %> |
 <%= link_to 'Back', presupuestos_path %>

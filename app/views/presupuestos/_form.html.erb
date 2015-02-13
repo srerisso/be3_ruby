@@ -30,11 +30,15 @@
       <%= f.text_field :acabado, class:"form-control" %>
     </div>
     <div class="form-group">
-      <%= f.submit class:"btn btn-primary" %>
+      <%= f.label :estado %><br>
+      <%= f.text_field :estado, class:"form-control" %>
     </div>
-  </div>
-  <div class="col-sm-6">
-      <h3>Todo's del presupuesto</h3>
+    <div class="form-group">
+      <%= f.label :etiquetas %><br>
+      <%= f.text_field :etiquetas, class:"form-control" %>
+    </div>
+
+    <h3>Todo's del presupuesto</h3>
     <!-- Todo's para el presupuesto -->
     <%= f.fields_for :todos do |builder| %>
     <div class="form-group">
@@ -42,9 +46,14 @@
         <%= builder.text_field :texto, class:"form-control" %>
     </div>
     <% end %>
+      
+    <div class="form-group">
+      <%= f.submit class:"btn btn-primary" %>
+    </div>
+      
   </div>
 </div>
 
-<%= link_to "Add Todo", presupuesto_todos_path(@presupuesto), class:"btn btn-link" %>
+<%= link_to "Add Todo", new_presupuesto_todo_path(:presupuesto_id), class:"btn btn-link" %>
 
 <% end %>

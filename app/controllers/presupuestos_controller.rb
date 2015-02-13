@@ -1,11 +1,5 @@
 class PresupuestosController < ApplicationController
   before_action :set_presupuesto, only: [:show, :edit, :update, :destroy]
-
-  # added 12/02/2015 a partir de http://stackoverflow.com/questions/18219008/rails-4-nested-resources
-  def set_presupuesto 
-    @presupuesto = Presupuesto.find(params[:id])
-    @todos = @presupuesto.todos
-  end
     
   # GET /presupuestos
   # GET /presupuestos.json
@@ -16,6 +10,8 @@ class PresupuestosController < ApplicationController
   # GET /presupuestos/1
   # GET /presupuestos/1.json
   def show
+      @presupuesto = Presupuesto.find(params[:id])
+      @todos = @presupuesto.todos
   end
 
   # GET /presupuestos/new
@@ -75,6 +71,6 @@ class PresupuestosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def presupuesto_params
-      params.require(:presupuesto).permit(:codigoalg, :series, :acabado, :referencia, todos_attributes: [:id, :texto])
+      params.require(:presupuesto).permit(:codigoalg, :series, :acabado, :referencia, :estado, :etiquetas, :cliente_id, todos_attributes: [:id, :texto])
     end
 end

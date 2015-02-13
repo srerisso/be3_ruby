@@ -5,6 +5,8 @@
           <td>C&oacute;digo</td>
           <td>Referencia</td>
           <td>Cliente</td>
+          <td>Estado</td>
+          <td>Etiquetas</td>
           <td>Fecha IN</td>
           <td>Acciones</td>
 		</tr>
@@ -12,7 +14,9 @@
 		<tr>
 			<td><%= presupuesto.codigoalg %></td>
             <td><%= presupuesto.referencia %></td>
-			<td></td>
+            <td><%= presupuesto.cliente_id %></td>
+			<td><%= presupuesto.estado %></td>
+			<td><%= presupuesto.etiquetas %></td>
 		  	<td><%= presupuesto.created_at.to_formatted_s(:short) %></td>
 		  	<td class="col-md-3">
 				<%= link_to 'Show', presupuesto, class:"btn btn-link" %>
