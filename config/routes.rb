@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :clientes
+  resources :tareas
+
+  resources :clientes, :tareas
     
   # GET     /presupuestos           -> INDEX -- show all presupuestos
   # POST    /presupuestos           -> CREATE -- create a new presupuesto

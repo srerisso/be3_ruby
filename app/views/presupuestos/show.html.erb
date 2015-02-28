@@ -41,23 +41,29 @@
             <%= @presupuesto.etiquetas %>
         </span>
 
-        <h3>Todo's</h3>
-        <table class="table table-hover">
-            <tr>
-                <td>Fecha</td>
-                <td>Texto</td>
-            </tr>
-                <% @todos.each do |todo| %>
-                    <tr>
-                        <td><%= todo.created_at.nil? ? "..." : todo.created_at.to_formatted_s(:short) %></td>
-                        <td><%= todo.texto %></td>
-                    </tr>
-                <% end %>
+    </div>
+    <div class="col-sm-6"> 
+        <% if @todos.blank? %>
+            <h3>No hay tareas</h3>
+            <%= link_to 'Crear tarea', new_presupuesto_todo_path(@presupuesto) ,class:'btn btn-succes' %>
+        <% else %>
+            <h3>Tareas de <%= @presupuesto.codigoalg %></h3>
+            <table class="table table-hover">
+                <tr>
+                    <td>Fecha</td>
+                    <td>Texto</td>
+                </tr>
+                    <% @todos.each do |todo| %>
+                        <tr>
+                            <td><%= todo.created_at.nil? ? "..." : todo.created_at.to_formatted_s(:short) %> / <%= todo.texto %></td>
+                        </tr>
+                    <% end %>
 
-        </table>
+            </table>
+        <%end %>
     </div>
 
 </div>
 
 <%= link_to 'Edit', edit_presupuesto_path(@presupuesto), class:"btn btn-link" %> |
-<%= link_to 'Back', presupuestos_path %>
+<%= link_to 'Back', presupuestos_path, class: 'btn btn-link' %>

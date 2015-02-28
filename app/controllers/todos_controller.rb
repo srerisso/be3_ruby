@@ -1,5 +1,6 @@
 class TodosController < ApplicationController
   before_action :set_todo, only: [:show, :edit, :update, :destroy]
+  before_action :set_presupuesto
 
   # GET /todos
   # GET /todos.json
@@ -25,17 +26,24 @@ class TodosController < ApplicationController
   # POST /todos.json
   def create
     @todo = Todo.new(todo_params)
+    @todo.presupuesto_id = current_user.id
+
+    if @todo.save
+      redirect_to @presupuesto_id
+    else
+      render 'new'
+    end
     
     #TODO guardar presupuesto que corresponda
-    respond_to do |format|
-      if @todo.save
-        format.html { redirect_to @todo, notice: 'Todo was successfully created.' }
-        format.json { render :show, status: :created, location: @todo }
-      else
-        format.html { render :new }
-        format.json { render json: @todo.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @todo.save
+    #     format.html { redirect_to @todo, notice: 'Todo was successfully created.' }
+    #     format.json { render :show, status: :created, location: @todo }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @todo.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /todos/1
@@ -66,6 +74,10 @@ class TodosController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_todo
       @todo = Todo.find(params[:id])
+    end
+
+    def set_presupuesto
+      @presupuesto = Presupuesto.find(params[:presupuesto_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

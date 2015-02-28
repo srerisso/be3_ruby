@@ -10,8 +10,8 @@ class PresupuestosController < ApplicationController
   # GET /presupuestos/1
   # GET /presupuestos/1.json
   def show
-      @presupuesto = Presupuesto.find(params[:id])
-      @todos = @presupuesto.todos
+#      @presupuesto = Presupuesto.find(params[:id])
+      @todos = Todo.where(presupuesto_id: @presupuesto.id).order("created_at DESC")
   end
 
   # GET /presupuestos/new
