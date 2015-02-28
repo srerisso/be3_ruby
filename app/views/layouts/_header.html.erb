@@ -17,6 +17,14 @@
         <li><a href="/presupuestos">Presupuestos</a></li>
         <li><a href="/clientes">Clientes</a></li>
         <li><a href="/tareas">Tareas</a></li>
+
+        <%  if user_signed_in? %>
+          <li><%= link_to "Mi cuenta", edit_user_registration_path, class:"active" %></li>
+          <li><%= link_to "Log out", destroy_user_session_path, class:"active" %></li>
+        <% else %>
+          <li><%= link_to "Sign in", new_user_session_path, class: "active" %></li>
+          <li><%= link_to "Sign up", new_user_registration_path, class: "active" %></li>
+        <% end %>
       </ul>
 
     </div><!-- /.navbar-collapse -->

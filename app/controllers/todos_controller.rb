@@ -29,7 +29,7 @@ class TodosController < ApplicationController
     @todo.presupuesto_id = current_user.id
 
     if @todo.save
-      redirect_to @presupuesto_id
+      redirect_to @presupuesto
     else
       render 'new'
     end
