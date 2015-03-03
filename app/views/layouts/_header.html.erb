@@ -14,17 +14,30 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="/presupuestos">Presupuestos</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Presupuestos <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="/presupuestos">Listado actual</a></li>
+              <li><a href="">Listados archivados</a></li>
+            </ul>
+        </li>
         <li><a href="/clientes">Clientes</a></li>
         <li><a href="/tareas">Tareas</a></li>
+      </ul>
 
-        <%  if user_signed_in? %>
-          <li><%= link_to "Mi cuenta", edit_user_registration_path, class:"active" %></li>
-          <li><%= link_to "Log out", destroy_user_session_path, class:"active" %></li>
-        <% else %>
-          <li><%= link_to "Sign in", new_user_session_path, class: "active" %></li>
-          <li><%= link_to "Sign up", new_user_registration_path, class: "active" %></li>
-        <% end %>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tu usuario <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <%  if user_signed_in? %>
+              <li><%= link_to "Mi cuenta", edit_user_registration_path, class:"active" %></li>
+              <li><%= link_to "Log out",  destroy_user_session_path, :method => :delete, class:"active" %></li>
+            <% else %>
+              <li><%= link_to "Login", new_user_session_path, class: "active" %></li>
+              <li><%= link_to "Registro", new_user_registration_path, class: "active" %></li>
+            <% end %>        
+          </ul>
+        </li>
       </ul>
 
     </div><!-- /.navbar-collapse -->

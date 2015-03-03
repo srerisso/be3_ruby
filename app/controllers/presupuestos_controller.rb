@@ -1,6 +1,6 @@
 class PresupuestosController < ApplicationController
   before_action :set_presupuesto, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index, :show]
     
   # GET /presupuestos
   # GET /presupuestos.json
