@@ -19,6 +19,7 @@ class PresupuestosController < ApplicationController
   # GET /presupuestos/new
   def new
     @presupuesto = Presupuesto.new
+    @last = Presupuesto.last
   end
 
   # GET /presupuestos/1/edit
