@@ -1,5 +1,6 @@
 class TareasController < ApplicationController
   before_action :set_tarea, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /tareas
   # GET /tareas.json
