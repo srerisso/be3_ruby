@@ -6,6 +6,7 @@ group :development do
 end
 group :production do
 	gem 'pg'
+	gem 'rails_12factor'
 end
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
