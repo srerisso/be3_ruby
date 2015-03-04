@@ -27,7 +27,7 @@ class TodosController < ApplicationController
   # POST /todos.json
   def create
     @todo = Todo.new(todo_params)
-    @todo.presupuesto_id = current_user.id
+    @todo.presupuesto_id = @presupuesto.id
 
     if @todo.save
       redirect_to @presupuesto

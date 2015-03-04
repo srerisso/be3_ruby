@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<h1><%= @presupuesto.codigoalg %></h1>
 <div class="row">
     <div class="col-sm-6">
         <table class="table table-bordered">
@@ -19,9 +19,6 @@
                 <td><strong>Estado</strong></td>
                 <td><%= @presupuesto.estado %></td>
             </tr>
-        </table>
-        
-        <table class="table table-bordered">
             <tr>
                 <td><strong>Referencia</strong></td>
                 <td>  <%= @presupuesto.referencia %></td>
@@ -37,17 +34,18 @@
         
         </table>
         
-        <span><strong>Etiquetas</strong>: 
-            <%= @presupuesto.etiquetas %>
-        </span>
+        <table class="table table-bordered">
+            <tr>
+                <td><strong>Etiquetas</strong>: <%= @presupuesto.etiquetas %></td>
+            </tr>
+        </table>
 
     </div>
-    <div class="col-sm-6"> 
+    <div class="col-sm-4 col-md-offset-1"> 
+        <h3>Actividad del presupuesto <%= @presupuesto.codigoalg %></h3>
         <% if @todos.blank? %>
-            <h3>No hay tareas</h3>
-            <%= link_to 'Crear tarea', new_presupuesto_todo_path(@presupuesto) ,class:'btn btn-succes' %>
+        <h1>No hay notas</h1>
         <% else %>
-            <h3>Tareas de <%= @presupuesto.codigoalg %></h3>
             <table class="table table-hover">
                 </tr>
                     <% @todos.each do |todo| %>
@@ -58,8 +56,8 @@
 
             </table>
         <%end %>
+        <%= link_to "Añadir Nota", new_presupuesto_todo_path(@presupuesto), class:"btn btn-success" %>
     </div>
-
 </div>
 
 <%= link_to 'Edit', edit_presupuesto_path(@presupuesto), class:"btn btn-link" %> |
