@@ -5,7 +5,7 @@
 			<p>Ordenados por fecha de m&aacute;s actuales a m&aacute;s antiguos</p>
 		</div>
 		<div class="col-sm-2">
-			<%= link_to 'New Presupuesto', new_presupuesto_path, class:"btn btn-md btn-primary" %> <br /><br />
+			<%= link_to 'Nuevo Presupuesto', new_presupuesto_path, class:"btn btn-md btn-primary" %> <br /><br />
 		</div>
 	</div>		
 
@@ -16,25 +16,21 @@
 		  <td>Referencia</td>
 		  <td>Cliente</td>
 		  <td>Estado</td>
-		  <td>Etiquetas</td>
 		  <td>Fecha IN</td>
 		  <td>Acciones</td>
 		</tr>
 		<% @presupuestos.each do |presupuesto| %>
 		<tr>
-			<td><%= presupuesto.codigoalg %></td>
+			<td><%= link_to presupuesto.codigoalg, presupuesto, class:"btn btn-link" %></td>
 		    <td><%= presupuesto.referencia %></td>
-		    <td><%= presupuesto.cliente_id %></td>
-			<td><%= presupuesto.estado %></td>
-			<td><% if presupuesto.blank? %>
-					<%= presupuesto.etiquetas %>
-				<% else %>
-					<span class="label label-default"><%= presupuesto.etiquetas %></span>
-				<% end %>
-			</td>
+		    <td><%= @clientes %></td>
+			<td><% if !presupuesto.estado.blank? %>
+                <% sss = presupuesto.estado %>
+                    <span class="label label-<%= sss.to_str == 'OK' ? 'success' : 'danger' %>"><%= sss %></span>
+                <% end %>
+            </td>
 		  	<td><%= presupuesto.created_at.to_formatted_s(:short) %></td>
-		  	<td class="col-md-3">
-				<%= link_to 'Show', presupuesto, class:"btn btn-link" %>
+		  	<td>
 		    	<%= link_to 'Edit', edit_presupuesto_path(presupuesto), class:"btn btn-link" %>
 		    	<%= link_to 'Destroy', presupuesto, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-link" %>
 			</td>

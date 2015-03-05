@@ -1,18 +1,17 @@
 class PresupuestosController < ApplicationController
   before_action :set_presupuesto, only: [:show, :edit, :update, :destroy]
+  before_action :set_clientlist
   before_action :authenticate_user!
     
   # GET /presupuestos
   # GET /presupuestos.json
   def index
-#    @presupuestos = Presupuesto.order('created_at DESC')
      @presupuestos = Presupuesto.paginate(:page => params[:page], :per_page => 10).order('created_at DESC')
   end
 
   # GET /presupuestos/1
   # GET /presupuestos/1.json
   def show
-#      @presupuesto = Presupuesto.find(params[:id])
       @todos = Todo.where(presupuesto_id: @presupuesto.id).order("created_at DESC")
   end
 
@@ -30,10 +29,11 @@ class PresupuestosController < ApplicationController
   # POST /presupuestos.json
   def create
     @presupuesto = Presupuesto.new(presupuesto_params)
+#    @presupuesto.cliente_id = presupuesto_params[:cliente]
 
     respond_to do |format|
       if @presupuesto.save
-        format.html { redirect_to @presupuesto, notice: 'Presupuesto was successfully created.' }
+        format.html { redirect_to @presupuesto }
         format.json { render :show, status: :created, location: @presupuesto }
       else
         format.html { render :new }
@@ -70,6 +70,10 @@ class PresupuestosController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_presupuesto
       @presupuesto = Presupuesto.find(params[:id])
+    end
+    
+    def set_clientlist
+        @clientes = Cliente.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

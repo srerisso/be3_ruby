@@ -5,7 +5,7 @@ class ClientesController < ApplicationController
   # GET /clientes
   # GET /clientes.json
   def index
-    @clientes = Cliente.all
+    @clientes = Cliente.all.order('nombre ASC')
   end
 
   # GET /clientes/1
