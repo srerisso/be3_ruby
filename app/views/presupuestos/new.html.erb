@@ -1,6 +1,8 @@
 <h3>Nuevo presupuesto</h3>
 
-<span class="text-muted">&Uacute;ltimo ALG: <%= @last.codigoalg %></span>
+<% if !@last.nil? %>
+    <span class="text-muted">&Uacute;ltimo ALG: <%= @last.codigoalg %></span>
+<% end %>
 
 <%= render 'form' %>
 
