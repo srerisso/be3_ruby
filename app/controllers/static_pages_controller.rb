@@ -8,7 +8,7 @@ before_action :disable_nav
   end
 
   def login
-  	redirect_to new_user_session_path, disable_nav: @disable_nav
+  	redirect_to new_user_session_path(:disable_nav => @disable_nav)
   end
 
   def disable_nav
