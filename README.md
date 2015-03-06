@@ -1,39 +1,26 @@
-README - Butler2
+#README - Butler2 v1.0
+*Butler2* o B2 es la aplicación de administración de tareas y presupuestos de Jose Manuel Gómez.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+###Version
+v1.0 Febrero 2015 - CRUD de presupuestos y Todo's de presupuesto, Clientes y Tareas
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+v2.0 Septiembre 2015 - *por definir*
 
 
-Pasos importantes que quedan por hacer
-
-* Instalar Elasticsearh o alg&uacute;n motor de b´usqueda
-
-* Deployment
-
-* 
-
-Requisitos deseados de la aplicaci´on
-
-* Como manejar versiones de un ALG
+###Todo's
 
 * Añadir relaciones entre Clientes y Tareas, Clientes y Presupuestos
 
-* Devise registro con email, enviar email de confirmaci&ooacute;n
+* Instalar Elasticsearh o alg&uacute;n motor de b&uacute;squeda
+
+* Seed de los presupuestos y sus todo's de 2014
+
+
+
+###Requisitos deseados
+
+* Manejar versiones de un ALG (recálculos debidos a cambios o errores)
+
+* Registro con email y contraseña. Añadir enviar email de confirmaci&ooacute;n y asegurar que no se registra cualquier persona.
+
+* Aplicar BDD y TDD para desarrollar la aplicación de manera estructurada, organizada y con tests
