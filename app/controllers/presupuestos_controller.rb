@@ -29,7 +29,7 @@ class PresupuestosController < ApplicationController
   # POST /presupuestos.json
   def create
     @presupuesto = Presupuesto.new(presupuesto_params)
-    @presupuesto.cliente_id = cliente.id
+#    @presupuesto.cliente_id = cliente.id
 
     respond_to do |format|
       if @presupuesto.save
