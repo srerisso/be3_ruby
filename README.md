@@ -21,6 +21,6 @@ v2.0 Septiembre 2015 - *por definir*
 
 * Manejar versiones de un ALG (recálculos debidos a cambios o errores)
 
-* Registro con email y contraseña. Añadir enviar email de confirmaci&ooacute;n y asegurar que no se registra cualquier persona.
+* Registro con email y contraseña. Añadir enviar email de confirmación y asegurar que no se registra cualquier persona.
 
 * Aplicar BDD y TDD para desarrollar la aplicación de manera estructurada, organizada y con tests
