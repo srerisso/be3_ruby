@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<%=  render 'layouts/header' unless params[:controller] == "users" %>
+<%=  render 'layouts/header' unless params[:controller] == "users" && params[:action] == "sign_in" %>
 
 <div class="container">
     <% flash.each do |name, msg| %>
