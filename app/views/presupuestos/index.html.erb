@@ -23,7 +23,7 @@
 		<tr>
 			<td><%= link_to presupuesto.codigoalg, presupuesto, class:"btn btn-link" %></td>
 		    <td><%= presupuesto.referencia %></td>
-		    <td><%= @clientes %></td>
+		    <td><%= presupuesto.cliente.nombre %></td>
 			<td><% if !presupuesto.estado.blank? %>
                 <% sss = presupuesto.estado %>
                     <span class="label label-<%= sss.to_str == 'OK' ? 'success' : 'danger' %>"><%= sss %></span>
