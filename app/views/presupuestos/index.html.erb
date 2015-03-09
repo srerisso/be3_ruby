@@ -26,7 +26,7 @@
 		    <td><%= presupuesto.cliente.nombre %></td>
 			<td><% if !presupuesto.estado.blank? %>
                 <% sss = presupuesto.estado %>
-                    <span class="label label-<%= sss.to_str == 'OK' ? 'success' : 'danger' %>"><%= sss %></span>
+                    <span class="label label-<%= sss.to_str.downcase == 'ok' ? 'success' : 'danger' %>"><%= sss %></span>
                 <% end %>
             </td>
 		  	<td><%= presupuesto.created_at.to_formatted_s(:short) %></td>
