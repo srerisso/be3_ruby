@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :clientes, :tareas
+
+  get 'search' => 'presupuestos#search'
     
   # GET     /presupuestos           -> INDEX -- show all presupuestos
   # POST    /presupuestos           -> CREATE -- create a new presupuesto

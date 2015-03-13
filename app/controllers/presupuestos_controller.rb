@@ -6,12 +6,15 @@ class PresupuestosController < ApplicationController
   # GET /presupuestos
   # GET /presupuestos.json
   def index
-#     @presupuestos = Presupuesto.paginate(:page => params[:page], :per_page => 10).order('created_at DESC')
-    @search = Presupuesto.search do
-      fulltext params[:search]
-      paginate :page => 1, :per_page => 10
+    if (params[:search]) 
+      @search = Presupuesto.search do
+        fulltext params[:search]
+        paginate :page => params[:page]
+      end
+      @presupuestos = @search.results
+    else
+      @presupuestos = Presupuesto.paginate(:page => params[:page], :per_page => 10).order('created_at DESC')      
     end
-    @presupuestos = @search.results
   end
 
   # GET /presupuestos/1
@@ -69,6 +72,14 @@ class PresupuestosController < ApplicationController
       format.html { redirect_to presupuestos_url, notice: 'Presupuesto was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def search
+    @search = Presupuesto.search do
+      fulltext params[:search]
+      paginate :page => params[:page]
+    end
+    @search.results
   end
 
   private

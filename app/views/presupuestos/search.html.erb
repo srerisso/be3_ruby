@@ -1,0 +1,10 @@
+<div class="results">
+  <% @search.each_hit_with_result do |hit, post| -%>
+    <div class="result">
+      <h2><%= hit.stored(:title) %></h2>
+      <div class="score"><%= hit.score %></div>
+      <p><%= h(post.body) %></p>
+    </div>
+  <% end -%>
+</div>
+  <%= will_paginate(@search.results) %>
