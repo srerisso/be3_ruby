@@ -6,7 +6,12 @@ class PresupuestosController < ApplicationController
   # GET /presupuestos
   # GET /presupuestos.json
   def index
-     @presupuestos = Presupuesto.paginate(:page => params[:page], :per_page => 10).order('created_at DESC')
+#     @presupuestos = Presupuesto.paginate(:page => params[:page], :per_page => 10).order('created_at DESC')
+    @search = Presupuesto.search do
+      fulltext params[:search]
+      paginate :page => 1, :per_page => 10
+    end
+    @presupuestos = @search.results
   end
 
   # GET /presupuestos/1

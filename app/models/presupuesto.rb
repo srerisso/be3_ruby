@@ -4,4 +4,8 @@ class Presupuesto < ActiveRecord::Base
     belongs_to :cliente
     validates :cliente, presence: true
     validates :referencia, presence: true
+
+    searchable do
+    	text :referencia
+    end
 end

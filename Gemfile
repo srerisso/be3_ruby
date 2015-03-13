@@ -1,8 +1,12 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.1.8'
+
+gem 'sunspot_rails'
 group :development do
 	gem 'pg'
+	# full-text search
+	gem 'sunspot_solr', '~> 2.1.1'
 end
 group :production do
 	gem 'pg'
