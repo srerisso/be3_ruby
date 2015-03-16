@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: b2_dev
+  database: b23_dev
   pool: 5
   username: jose
   password: rosab3l
@@ -12,7 +12,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: b2_test
+  database: b23_test
   pool: 5
   username: jose
   password: rosab3l
