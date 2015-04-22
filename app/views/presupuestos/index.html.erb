@@ -24,9 +24,19 @@
 			<td><%= link_to presupuesto.codigoalg, presupuesto, class:"btn btn-link" %></td>
 		    <td><%= presupuesto.referencia %></td>
 		    <td><%= presupuesto.cliente.nombre %></td>
-			<td><% if !presupuesto.estado.blank? %>
-                <% sss = presupuesto.estado %>
-                    <span class="label label-<%= sss.to_str.downcase == 'ok' ? 'success' : 'danger' %>"><%= sss %></span>
+			<td>
+                <% if !presupuesto.estado.blank? %>
+                    <% sss = presupuesto.estado %>
+                    <% if sss.to_str.downcase == 'ok' %>
+                        <span class="label label-success">
+                    <% elsif sss.to_str.downcase == 'pendiente' %>
+                        <span class="label label-danger">
+                    <% elsif %>
+                        <span class="label label-warning">
+                    <% else %>
+                        <span class="label label-default">
+                    <% end %>
+                    <%= sss %></span>
                 <% end %>
             </td>
 		  	<td><%= presupuesto.created_at.to_formatted_s(:short) %></td>
