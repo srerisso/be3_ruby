@@ -9,7 +9,11 @@ v2.0 Septiembre 2017 - *por definir*
 
 ###Todo's
 
-* Añadir campos en listados (Total del proyecto en €, versiones del presupuesto) 
+* Añadir campos en listados (Total del proyecto en €) 
+ 
+* Gestionar diferentes versiones de un presupuesto
+ 
+* Código ALG automático, y verificar valores introducidos en TODOS el  formulario
 
 * Filtros en listados ( cliente A-Z, fecha de creación, últimos comentarios del proyecto)
 
