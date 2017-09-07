@@ -14,7 +14,7 @@ v2.0 Septiembre 2017 - *por definir*
 * Gestionar diferentes versiones de un presupuesto
  
 * Código ALG automático, y verificar valores introducidos en TODOS el  formulario
-
+x
 * Filtros en listados ( cliente A-Z, fecha de creación, últimos comentarios del proyecto)
 
 * Instalar Elasticsearh o alg&uacute;n motor de b&uacute;squeda
