@@ -1,4 +1,4 @@
-class CreatePresupuestos < ActiveRecord::Migration
+class CreatePresupuestos < ActiveRecord::Migration[5.1]
   def change
     create_table :presupuestos do |t|
       t.string :codigoalg

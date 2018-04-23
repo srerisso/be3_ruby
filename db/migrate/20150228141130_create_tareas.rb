@@ -1,4 +1,4 @@
-class CreateTareas < ActiveRecord::Migration
+class CreateTareas < ActiveRecord::Migration[5.1]
   def change
     create_table :tareas do |t|
 
