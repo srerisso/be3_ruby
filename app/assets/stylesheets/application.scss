@@ -1,5 +1,7 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+/*@import "bootstrap-sprockets";
+@import "bootstrap";*/
+@import "gentelella";
+@import "gentelella-custom";
 
 /* login styles */
 .loginheader {
@@ -7,7 +9,7 @@
   font-size: 180px;
   font-weight: 800;
   letter-spacing: -10px;
-  margin-bottom: 0;   
+  margin-bottom: 0;
 }
 
 .loginbody {

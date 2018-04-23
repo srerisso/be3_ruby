@@ -1,56 +1,52 @@
-<div class="center">
 	<div class="row">
-		<div class="col-sm-10">
+
+		<div class="col-md-12 col-sm-12 col-xs-12">
 			<h3>Listado de Presupuestos</h3>
 			<p>Ordenados por fecha de m&aacute;s actuales a m&aacute;s antiguos</p>
-		</div>
-		<div class="col-sm-2">
-			<%= link_to 'Nuevo Presupuesto', new_presupuesto_path, class:"btn btn-md btn-primary" %> <br /><br />
-		</div>
-	</div>		
 
-	<div class="row">
+			<%= link_to 'Nuevo Presupuesto', new_presupuesto_path, class:"btn btn-md btn-primary" %> <br /><br />
+
 		<table class="table table-bordered">
 		<tr>
-		  <td>C&oacute;digo</td>
-		  <td>Referencia</td>
-		  <td>Cliente</td>
-		  <td>Estado</td>
-		  <td>Fecha IN</td>
-		  <td>Acciones</td>
+			<td>C&oacute;digo</td>
+			<td>Referencia</td>
+			<td>Cliente</td>
+			<td>Estado</td>
+			<td>Fecha IN</td>
+			<td>Acciones</td>
 		</tr>
 		<% @presupuestos.each do |presupuesto| %>
 		<tr>
 			<td><%= link_to presupuesto.codigoalg, presupuesto, class:"btn btn-link" %></td>
-		    <td><%= presupuesto.referencia %></td>
-		    <td><%= presupuesto.cliente.nombre %></td>
+				<td><%= presupuesto.referencia %></td>
+				<td><%= presupuesto.cliente.nombre %></td>
 			<td>
-                <% if !presupuesto.estado.blank? %>
-                    <% sss = presupuesto.estado %>
-                    <% if sss.to_str.downcase == 'ok' %>
-                        <span class="label label-success">
-                    <% elsif sss.to_str.downcase == 'pendiente' %>
-                        <span class="label label-danger">
-                    <% elsif %>
-                        <span class="label label-warning">
-                    <% else %>
-                        <span class="label label-default">
-                    <% end %>
-                    <%= sss %></span>
-                <% end %>
-            </td>
-		  	<td><%= presupuesto.created_at.to_formatted_s(:short) %></td>
-		  	<td>
-		    	<%= link_to 'Edit', edit_presupuesto_path(presupuesto), class:"btn btn-link" %>
-		    	<%= link_to 'Destroy', presupuesto, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-link" %>
+								<% if !presupuesto.estado.blank? %>
+										<% sss = presupuesto.estado %>
+										<% if sss.to_str.downcase == 'ok' %>
+												<span class="label label-success">
+										<% elsif sss.to_str.downcase == 'pendiente' %>
+												<span class="label label-danger">
+										<% elsif %>
+												<span class="label label-warning">
+										<% else %>
+												<span class="label label-default">
+										<% end %>
+										<%= sss %></span>
+								<% end %>
+						</td>
+				<td><%= presupuesto.created_at.to_formatted_s(:short) %></td>
+				<td>
+					<%= link_to 'Edit', edit_presupuesto_path(presupuesto), class:"btn btn-link" %>
+					<%= link_to 'Destroy', presupuesto, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-link" %>
 			</td>
 		</tr>
 		<% end %>
 		</table>
 
-		<nav>
-		<%= will_paginate @presupuestos %>
-		</nav>
+			<nav>
+			<%= will_paginate @presupuestos %>
+			</nav>
 		</div>
 
 </div>
