@@ -233,8 +233,13 @@ DEPENDENCIES
   gentelella-rails
   jbuilder
   jquery-rails
+<<<<<<< Updated upstream
   pg (~> 0.21)
   rails (= 4.2.7.1)
+=======
+  pg
+  rails
+>>>>>>> Stashed changes
   rails_12factor
   sass-rails
   sdoc
