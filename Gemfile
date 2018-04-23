@@ -1,13 +1,12 @@
 source 'https://rubygems.org'
 
-#gem 'rails', '4.2.7.1'
-gem 'rails', '~> 4.2.7.1 '
+gem 'rails', '4.2.7.1'
 gem 'sunspot_rails'
 group :development do
-	gem 'pg'
+	gem 'pg', '~> 0.21'
 end
 group :production do
-	gem 'pg'
+	gem 'pg', '~> 0.21'
 	gem 'rails_12factor'
 end
 gem 'sass-rails', '~> 4.0.3'
