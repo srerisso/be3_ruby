@@ -15,6 +15,7 @@
   <div class="col-sm-6">
     <div class="form-group">
       <%= f.label :codigoalg %><br>
+      ALG-2018-
       <%= f.text_field :codigoalg, class:"form-control" %>
     </div>
     <div class="form-group">
@@ -36,17 +37,22 @@
     </div>
     <div class="form-group">
       <%= f.label :estado %><br>
-      <%= f.text_field :estado, class:"form-control" %>
+      <!--<%= f.text_field :estado, class:"form-control" %> -->
+      <%= check_box_tag(:estado, 'PENDIENTE', true) %> PENDIENTE
+      <%= check_box_tag(:estado, 'OK') %> OK
+      <%= check_box_tag(:estado, 'ENVIADO') %> ENVIADO
+      <%= check_box_tag(:estado, 'PEDIDO') %> PEDIDO
+
     </div>
-    <div class="form-group">
-      <%= f.label :etiquetas %><br>
-      <%= f.text_field :etiquetas, class:"form-control" %>
+    <div id="name" class="form-group">
+        <%= f.label :etiquetas %><br />
+        <%= select_tag(:etiquetas, options_for_select([["A limpio", 1],["Recálculo", 2]])) %>
     </div>
-      
+
     <div class="form-group">
       <%= f.submit class:"btn btn-primary" %>
     </div>
-      
+
   </div>
 </div>
 
