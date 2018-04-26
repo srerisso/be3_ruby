@@ -32,17 +32,17 @@ class PresupuestosController < ApplicationController
 
   # GET /presupuestos/1/edit
   def edit
+    clienteX = Cliente.where(cliente_id: @presupuesto.cliente_id)
   end
 
   # POST /presupuestos
   # POST /presupuestos.json
   def create
     @presupuesto = Presupuesto.new(presupuesto_params)
-#    @presupuesto.cliente_id = cliente.id
 
     respond_to do |format|
       if @presupuesto.save
-        format.html { redirect_to @presupuesto }
+        format.html { redirect_to presupuestos_path }
         format.json { render :show, status: :created, location: @presupuesto }
       else
         format.html { render :new }
