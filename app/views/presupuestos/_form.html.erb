@@ -38,15 +38,19 @@
     <div class="form-group">
       <%= f.label :estado %><br>
       <!--<%= f.text_field :estado, class:"form-control" %> -->
-      <%= check_box_tag(:estado, 'PENDIENTE', true) %> PENDIENTE
-      <%= check_box_tag(:estado, 'OK') %> OK
-      <%= check_box_tag(:estado, 'ENVIADO') %> ENVIADO
-      <%= check_box_tag(:estado, 'PEDIDO') %> PEDIDO
+      <%= f.radio_button(:estado, "PENDIENTE") %>
+      <%= label_tag(:estado_pendiente, "Pendiente") %> <br />
+      <%= f.radio_button(:estado, "OK") %>
+      <%= label_tag(:estado_ok, "OK") %> <br />
+      <%= f.radio_button(:estado, "RECALCULO") %>
+      <%= label_tag(:estado_recalculo, "Recálculo") %> <br />
+      <%= f.radio_button(:estado, "WAIT") %>
+      <%= label_tag(:estado_esperando, "Esperando") %> <br />
 
     </div>
     <div id="name" class="form-group">
         <%= f.label :etiquetas %><br />
-        <%= select_tag(:etiquetas, options_for_select([["A limpio", 1],["Recálculo", 2]])) %>
+        <%= f.select(:etiquetas, [["Cálculo", 1],["A limpio", "A limpio"],["Recálculo", "Recalculo"]]) %>
     </div>
 
     <div class="form-group">

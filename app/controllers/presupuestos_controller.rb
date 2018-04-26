@@ -2,20 +2,20 @@ class PresupuestosController < ApplicationController
   before_action :set_presupuesto, only: [:show, :edit, :update, :destroy]
   before_action :set_clientlist
   before_action :authenticate_user!
-    
+
   # GET /presupuestos
   # GET /presupuestos.json
   def index
-#    if (params[:search]) 
+#    if (params[:search])
 #      @search = Presupuesto.search do
 #        fulltext params[:search]
 #        paginate :page => params[:page]
 #      end
 #      @presupuestos = @search.results
 #    else
-#      @presupuestos = Presupuesto.paginate(:page => params[:page], :per_page => 10).order('created_at DESC')      
+#      @presupuestos = Presupuesto.paginate(:page => params[:page], :per_page => 10).order('created_at DESC')
 #    end
-    @presupuestos = Presupuesto.paginate(:page => params[:page], :per_page => 10).order('created_at DESC') 
+    @presupuestos = Presupuesto.paginate(:page => params[:page], :per_page => 10).order('created_at DESC')
   end
 
   # GET /presupuestos/1
@@ -88,7 +88,7 @@ class PresupuestosController < ApplicationController
     def set_presupuesto
       @presupuesto = Presupuesto.find(params[:id])
     end
-    
+
     def set_clientlist
         @clientes = Cliente.all
     end
