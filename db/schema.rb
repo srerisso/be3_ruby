@@ -32,8 +32,6 @@ ActiveRecord::Schema.define(version: 20180426113426) do
     t.string "estado", limit: 255
     t.string "etiquetas", limit: 255
     t.integer "cliente_id"
-    t.integer "codigoalghijo"
-    t.boolean "eshijo"
     t.float "importe"
   end
 
