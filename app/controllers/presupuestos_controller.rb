@@ -95,6 +95,6 @@ class PresupuestosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def presupuesto_params
-      params.require(:presupuesto).permit(:codigoalg, :series, :acabado, :referencia, :estado, :etiquetas, :cliente_id, todos_attributes: [:id, :texto])
+      params.require(:presupuesto).permit(:codigoalg, :series, :importe, :acabado, :referencia, :estado, :etiquetas, :cliente_id, todos_attributes: [:id, :texto])
     end
 end
