@@ -5,10 +5,10 @@ gem 'sunspot_rails'
 group :development do
 	gem 'pg', '~> 0.21'
 end
-group :production do
-	gem 'pg', '~> 0.21'
-	gem 'rails_12factor'
-end
+# group :production do
+# 	gem 'pg', '~> 0.21'
+# 	gem 'rails_12factor'
+# end
 # Backend template Gentelella (23.04.2018)
 gem 'gentelella-rails'
 #gem 'sass-rails', '~> 4.0.3'

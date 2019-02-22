@@ -5,16 +5,16 @@
 v1.0 Febrero 2015.
 - CRUD de presupuestos y Todo's de presupuesto, Clientes y Tareas.
 
-v2.0 Abril 2018.
+v2.0 Marzo 2019.
 - Buscador.
 - Rediseño de páginas.
-
-v3.0 Octubre 2018.
 - Análisis de datos (clientes más prespuestados, presupuestos más elevados).
 
 ### Por hacer
 
-* Añadir campos en listados (Total del proyecto en €, series)
+* Activar Active_Storage para poder adjuntar archivos a un presupuesto.
+
+* Añadir campos en listados (Total del proyecto en €, series).
 
 * Gestionar diferentes versiones de un presupuesto.
 
@@ -30,9 +30,9 @@ v3.0 Octubre 2018.
 
 ### Requisitos deseados
 
-* Manejar versiones de un ALG (recálculos debidos a cambios o errores)
+* Manejar versiones de un ALG (recálculos debidos a cambios).
 
-* Aplicar BDD y TDD para desarrollar la aplicación de manera estructurada, organizada y con tests
+* Aplicar BDD y TDD para desarrollar la aplicación de manera estructurada, organizada y con tests.
 
 ### Requisitos a-lo-mejor
 
