@@ -9,99 +9,11 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body class="nav-md">
+<body>
 
-<div class="container body">
+<%= render 'layouts/header' %>
 
-<div class="main_container">
-
-<!-- left column -->
-<div class="col-md-3 left_col">
-          <div class="left_col scroll-view">
-            <div class="navbar nav_title" style="border: 0;">
-              <a href="/" class="site_title"> <span>B2 Admin</span></a>
-            </div>
-
-            <!-- sidebar menu -->
-            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-              <div class="menu_section active">
-                <h3>General</h3>
-                <ul class="nav side-menu" style="">
-                  <li class="active"><a><i class="fa fa-home"></i> Presupuestos <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu" style="display: block;">
-                      <li><%= link_to 'Nuevo Presupuesto', new_presupuesto_path %></li>
-                      <li><a href="/presupuestos">Listado</a></li>
-                      <li><a href="/tareas">Tareas</a></li>
-                    </ul>
-                  </li>
-
-                  <li><a><i class="fa fa-users"></i> Clientes <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="/clientes">Clientes</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-
-            </div>
-            <!-- /sidebar menu -->
-
-            <!-- /menu footer buttons -->
-            <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="" data-original-title="Settings">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="" data-original-title="FullScreen">
-                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="" data-original-title="Lock">
-                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-              </a>
-
-              <%= link_to content_tag(:span, '', :class=> "glyphicon glyphicon-off"), destroy_user_session_path, method: :delete %>
-            </div>
-            <!-- /menu footer buttons -->
-          </div>
-        </div>
-<!-- left column -->
-
-<!-- top nav -->
-<div class="top_nav">
-          <div class="nav_menu">
-            <nav>
-              <div class="nav toggle">
-                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-              </div>
-
-              <ul class="nav navbar-nav navbar-right">
-                <li class="">
-                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt="">John Doe
-                    <span class=" fa fa-angle-down"></span>
-                  </a>
-                  <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="javascript:;"> Profile</a></li>
-                    <li>
-                      <a href="javascript:;">
-                        <span class="badge bg-red pull-right">50%</span>
-                        <span>Settings</span>
-                      </a>
-                    </li>
-                    <li><a href="javascript:;">Help</a></li>
-                    <li><a href="/sign_out"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
-                    <li> <%= link_to destroy_user_session_path, method: :delete do %>
-                          <i class="fa fa-sign-out pull-right"></i>Log Out
-                         <% end %>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-<!-- top nav -->
-
-<div class="right_col" role="main" style="min-height: 3190px;">
+<div class="container-fluid">
   <% flash.each do |name, msg| %>
     <% if msg.is_a?(String) %>
         <div class="alert alert-<%= name.to_s == 'notice' ? 'success' : 'danger' %> alert-dismissible" role="alert">
@@ -117,8 +29,6 @@
 
 <%=  render 'layouts/footer' unless params[:controller] == "users" %>
 
-</div> <!-- main_container -->
-</div> <!--container body -->
 
 </body>
 </html>

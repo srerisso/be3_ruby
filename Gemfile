@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '5.1.4'
+gem 'rails', '5.2'
 gem 'sunspot_rails'
 group :development do
 	gem 'pg', '~> 0.21'
@@ -28,3 +28,5 @@ gem 'bootstrap-sass'#, '~> 3.3.3'
 gem 'devise'
 gem 'will_paginate'#, '~> 3.0.6'
 gem 'bootstrap-will_paginate', :git => 'git://github.com/yrgoldteeth/bootstrap-will_paginate.git'
+
+gem 'bootstrap', '~> 4.3.1'
