@@ -22,7 +22,7 @@ v2.0 Marzo 2019.
 
 * Filtros en listados, para poder ordenar por algunas columnas ( nombre del cliente A-Z, fecha de creación, últimos comentarios del proyecto).
 
-* Instalar Elasticsearh o Solr (o alg&uacute;n motor de b&uacute;squeda).
+* Instalar Elasticsearh o Solr (o algún motor de búsqueda).
 
 * Importar datos de años anteriores (2012, 2013, 2014, 2015, 2016) para elaborar análisis.
 
