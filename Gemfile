@@ -12,7 +12,7 @@ end
 # Backend template Gentelella (23.04.2018)
 # gem 'gentelella-rails'
 #gem 'sass-rails', '~> 4.0.3'
-gem 'sass-rails'
+# gem 'sass-rails'
 #gem 'uglifier', '>= 1.3.0'
 gem 'uglifier'
 #gem 'coffee-rails', '~> 4.0.0'
