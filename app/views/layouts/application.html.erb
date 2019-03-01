@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<%= render 'layouts/header' %>
+<%= render 'layouts/header' unless !user_signed_in? %>
 
 <div class="container-fluid">
   <% flash.each do |name, msg| %>
@@ -27,7 +27,7 @@
 
 </div>
 
-<%=  render 'layouts/footer' unless params[:controller] == "users" %>
+<%=  render 'layouts/footer' unless params[:controller] == "users" || !user_signed_in? %>
 
 
 </body>
