@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   get 'static_pages/login'
   get 'static_pages/home'
   get 'static_pages/historico'
@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :clientes, :tareas
 
   get 'search' => 'presupuestos#search'
-    
+
   # GET     /presupuestos           -> INDEX -- show all presupuestos
   # POST    /presupuestos           -> CREATE -- create a new presupuesto
   # GET     /presupuestos/new       -> New page
@@ -22,20 +22,20 @@ Rails.application.routes.draw do
   end
 
   resources :todos, :only => [:update, :destroy]
-    
+
   #-- GET /presupuestos/:presupuesto_id/todos     -> SHOW
   #-- GET /presupuestos/:presupuesto_id/todos/new     -> NEW page
   # POST /presupuestos/:presupuesto_id/todos     -> CREATE
   #-- GET /presupuestos/:presupuesto_id/todos/:id/edit     -> edit page
   # PUT /todos/:id     -> UPDATE
   # DELETE /todos/:id     -> DESTROY
-    
+
   #get 'presupuestos/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'presupuestos#index'
-#  root 'static_pages#login'
+  # root 'presupuestos#index'
+  root 'static_pages#home'
 end
