@@ -9,8 +9,6 @@ end
 # 	gem 'pg', '~> 0.21'
 # 	gem 'rails_12factor'
 # end
-# Backend template Gentelella (23.04.2018)
-# gem 'gentelella-rails'
 #gem 'sass-rails', '~> 4.0.3'
 # gem 'sass-rails'
 #gem 'uglifier', '>= 1.3.0'

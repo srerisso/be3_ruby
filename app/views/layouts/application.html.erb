@@ -13,7 +13,7 @@
 
 <%= render 'layouts/header' unless !user_signed_in? %>
 
-<div class="container-fluid">
+<div class="container">
   <% flash.each do |name, msg| %>
     <% if msg.is_a?(String) %>
         <div class="alert alert-<%= name.to_s == 'notice' ? 'success' : 'danger' %> alert-dismissible" role="alert">
