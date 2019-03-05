@@ -2,6 +2,7 @@ class StaticPagesController < ApplicationController
 before_action :disable_nav
 
   def home
+    # redirect_to new_user_session_path(:disable_nav => @disable_nav)
   end
 
   def historico
