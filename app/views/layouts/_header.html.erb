@@ -26,13 +26,13 @@
       </li>
     </ul>
 
-    <!-- <form class="form-inline my-2 my-lg-0">
+    <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form> -->
+    </form>
     <%= form_tag presupuestos_path, :method => :get, class: "form-inline my-2 my-lg-0" do %>
-        <%= text_field_tag :search, params[:search] %>
-        <%= submit_tag "Buscar", :name => nil, class:"btn btn-outline-success my-2 my-sm-0" %>
+        <%= text_field_tag :search, params[:search], class: "form-control mr-sm-2" %>
+        <%= button_tag "Buscar", type: "submit", class: "btn btn-outline-success my-2 my-sm-0"% >
     <% end %>
 
   <%  if user_signed_in? %>
@@ -41,7 +41,7 @@
         Mi cuenta
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <%= link_to "Editar cuenta", edit_user_registration_path, class:"dropdown-item" %>
+        <%= link_to "Editar cuenta", edit_user_registration_path, class: "dropdown-item" %>
         <%= link_to "Log out",  destroy_user_session_path, :method => :delete, class: "dropdown-item" %>
       </div>
     </li>

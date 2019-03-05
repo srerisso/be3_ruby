@@ -36,51 +36,51 @@ ActiveRecord::Schema.define(version: 2019_03_01_153241) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "clientes", id: :serial, force: :cascade do |t|
-    t.string "nombre", limit: 255
-    t.string "email", limit: 255
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "clientes", force: :cascade do |t|
+    t.string "nombre"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "presupuestos", id: :serial, force: :cascade do |t|
-    t.string "codigoalg", limit: 255
-    t.string "series", limit: 255
-    t.string "acabado", limit: 255
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string "referencia", limit: 255
-    t.string "estado", limit: 255
-    t.string "etiquetas", limit: 255
+    t.string "codigoalg"
+    t.string "series"
+    t.string "acabado"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "referencia"
+    t.string "estado"
+    t.string "etiquetas"
     t.integer "cliente_id"
     t.float "importe"
   end
 
-  create_table "tareas", id: :serial, force: :cascade do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "tareas", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "todos", id: :serial, force: :cascade do |t|
-    t.string "texto", limit: 255
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "todos", force: :cascade do |t|
+    t.string "texto"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "presupuesto_id"
   end
 
-  create_table "users", id: :serial, force: :cascade do |t|
-    t.string "email", limit: 255, default: "", null: false
-    t.string "encrypted_password", limit: 255, default: "", null: false
-    t.string "reset_password_token", limit: 255
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip", limit: 255
-    t.string "last_sign_in_ip", limit: 255
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
     t.datetime "locked_at"
