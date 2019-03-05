@@ -22,7 +22,6 @@ gem 'jbuilder'
 #gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'sdoc',          group: :doc
 gem 'spring',        group: :development
-gem 'bootstrap-sass'#, '~> 3.3.3'
 gem 'devise'
 gem 'will_paginate'#, '~> 3.0.6'
 gem 'bootstrap-will_paginate', :git => 'git://github.com/yrgoldteeth/bootstrap-will_paginate.git'

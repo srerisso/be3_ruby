@@ -29,7 +29,6 @@
 }
 
 /* form styles */
-
 .form-signin {
   max-width: 330px;
   padding: 15px;
@@ -63,4 +62,14 @@
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+// home styles
+.homecontainer {
+  position: relative;
+  top: 150px;
+}
+
+.homebackgroundimage {
+  background-image: url("america-analysis-business-926987_m.jpg");
 }
