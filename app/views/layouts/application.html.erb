@@ -11,6 +11,8 @@
 </head>
 <body>
 
+<main class="flex-shrink-0" role="main">
+  
 <%= render 'layouts/header' unless !user_signed_in? %>
 
 <div class="container">
@@ -26,9 +28,7 @@
   <%= yield %>
 
 </div>
-
-<%=  render 'layouts/footer' unless params[:controller] == "users" || !user_signed_in? %>
-
+</main>
 
 </body>
 </html>
