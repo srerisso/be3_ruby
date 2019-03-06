@@ -5,14 +5,25 @@
       <h1>Hello!</h1>
       <p>B2 is a simple project administration tool. Do you have a project that needs simple tracking?. B2 can help with that!.</p>
       <p>Please, log in to your account. Or sign up for a new account, in case you don't have any.</p>
-      <%= link_to "Log In", new_user_session_path, class: "btn btn-primary" %>
-      <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-success" %>
-      <hr>
-      <h1>Current status</h1>
-      <p>37 projects this year so far.</p>
-      <p>123.456 € in estimations</p>
+      <%= link_to "Log In", new_user_session_path, class: "btn btn-outline-primary" %>
+      <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-outline-success" %>
     </div>
     <div class="col-sm homebackgroundimage">
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-sm">
+      <h1>Current status</h1>
+        <p>NUMBER projects this year so far.</p>
+        <p>NUMBER € in estimations</p>
+    </div>
+    
+    <div class="col-sm">
+      <h1>Últimos proyectos</h1>
+      LIST
     </div>
   </div>
 </div>
