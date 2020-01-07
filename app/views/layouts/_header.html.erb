@@ -22,6 +22,18 @@
       </li>
 
       <% if user_signed_in? %>
+        <!-- Ventas -->
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" dadta-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Ventas / Pedidos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to "Editar cuenta", edit_user_registration_path, class: "dropdown-item" %>
+            <%= link_to "Log out",  destroy_user_session_path, :method => :delete, class: "dropdown-item" %>
+          </div>
+        </li>
+
+        <!-- Mi cuenta -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Mi cuenta
