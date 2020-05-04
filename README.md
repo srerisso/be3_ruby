@@ -1,16 +1,16 @@
-# README - Butler2 v1.0
-*Butler2* o **B2** es la aplicación de administración de tareas y presupuestos de Jose Manuel Gómez.
+# README - BackEnd App v2.0
+*Back End  o **BE** es la aplicación de administración de tareas y presupuestos de Jose Manuel Gómez.
 
 ### Versiones
 v1.0 Febrero 2015.
 - CRUD de presupuestos y Todo's de presupuesto, Clientes y Tareas.
 
-v2.0 Marzo 2019.
+v2.0 Mayo 2020.
 - Buscador.
 - Rediseño de páginas.
-- Análisis de datos (clientes más prespuestados, presupuestos más elevados).
 
 ### Por hacer
+* Corregir bugs, actualizar Rails y Ruby versions.
 
 * Activar Active_Storage para poder adjuntar archivos a un presupuesto.
 
@@ -36,4 +36,5 @@ v2.0 Marzo 2019.
 
 ### Requisitos a-lo-mejor
 
+* Análisis de datos (clientes más prespuestados, presupuestos más elevados).
 * Registro para clientes, que puedan comprobar estado de su presupuesto / proyecto
