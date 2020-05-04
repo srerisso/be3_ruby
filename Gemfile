@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'rails', '5.2'
+gem 'rails', '6.0.2.2'
 gem 'sunspot_rails'
 group :development do
 	gem 'pg', '~> 0.21'
+	gem 'listen'
 end
 # group :production do
 # 	gem 'pg', '~> 0.21'

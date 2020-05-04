@@ -1,16 +1,22 @@
 # README - BackEnd App v2.0
-*Back End  o **BE** es la aplicación de administración de tareas y presupuestos de Jose Manuel Gómez.
+*Back End*  o **BEApp** is a Project Management App that I use in my office.
 
-### Versiones
-v1.0 Febrero 2015.
+*Provisional Name: BE32020 (as of 2018)*
+
+### Versions.
+
+v2.0 April 2019 / May 2020.
+- Search system.
+- Redesign (web pages).
+- Redesign DB schema.
+
+v1.0 February 2015.
 - CRUD de presupuestos y Todo's de presupuesto, Clientes y Tareas.
+- Rails 5.2 y ruby 
 
-v2.0 Mayo 2020.
-- Buscador.
-- Rediseño de páginas.
 
-### Por hacer
-* Corregir bugs, actualizar Rails y Ruby versions.
+### TO DO's
+* Actualizar a Rails 6 y a ruby 2.7.1
 
 * Activar Active_Storage para poder adjuntar archivos a un presupuesto.
 
@@ -28,13 +34,13 @@ v2.0 Mayo 2020.
 
 
 
-### Requisitos deseados
+### Desired Requirements
 
 * Manejar versiones de un ALG (recálculos debidos a cambios).
 
 * Aplicar BDD y TDD para desarrollar la aplicación de manera estructurada, organizada y con tests.
 
-### Requisitos a-lo-mejor
+### *Maybe-later* requirements
 
 * Análisis de datos (clientes más prespuestados, presupuestos más elevados).
 * Registro para clientes, que puedan comprobar estado de su presupuesto / proyecto
