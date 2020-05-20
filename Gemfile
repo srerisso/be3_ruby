@@ -27,4 +27,5 @@ gem 'devise'
 gem 'will_paginate'#, '~> 3.0.6'
 gem 'bootstrap-will_paginate', :git => 'git://github.com/yrgoldteeth/bootstrap-will_paginate.git'
 
-gem 'bootstrap', '~> 4.3.1'
+gem 'bootstrap', '~> 4.0'
+gem 'puma'

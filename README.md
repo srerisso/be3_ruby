@@ -16,7 +16,7 @@ v1.0 February 2015.
 
 
 ### TO DO's
-* Actualizar a Rails 6 y a ruby 2.7.1
+* ~~Actualizar a Rails 6 y a ruby 2.7.1~~
 
 * Activar Active_Storage para poder adjuntar archivos a un presupuesto.
 
